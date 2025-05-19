@@ -32,10 +32,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </svelte:head>
 
-<header class="flex flex-col items-center py-6 bg-eva01-dark text-eva01-green border-b-4 border-eva01-green">
+<header class="flex flex-col items-center py-6 bg-eva01-dark text-eva01-green border-b-4 border-eva01-green shadow-md">
 	<h1 class="text-4xl font-mecha tracking-widest">エンジニア・ソフトウェア </h1>
-	<p class="text-eva01-accent mt-1 text-sm">Portafolio & Blog</p>
-	<button class="absolute top-4 right-4 px-3 py-1 rounded bg-eva01-green text-eva01-dark font-bold transition hover:scale-105" on:click={toggleDark} aria-label="Cambiar modo oscuro">
+	<p class="text-eva01-accent mt-1 text-sm font-medium">Portafolio & Blog</p>
+	<button 
+		class="absolute top-4 right-4 px-3 py-1 rounded-md bg-eva01-green text-eva01-dark font-bold transition-all hover:opacity-90 shadow-sm"
+		on:click={toggleDark} 
+		aria-label="Cambiar modo oscuro"
+	>
 		{dark ? '☀️' : '🌙'}
 	</button>
 </header>
