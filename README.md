@@ -1,9 +1,9 @@
-# [Tu Nombre]
+# ISAI MONROY
 
 📍 CDMX  
-📧 [tu@email.com]  
-📱 [Tu Teléfono]  
-🔗 [LinkedIn](https://linkedin.com/in/tu-perfil) | [GitHub](https://github.com/tu-usuario) | [Portafolio](https://tu-portafolio.com)
+📧 [RAULISAI97@GMAIL.COM]  
+📱 [55 7617 6856]  
+🔗 [LinkedIn](www.linkedin.com/in/raul-isai-monroy-romero-39b58a167) | [GitHub](https://github.com/raulisai) | [Portafolio](https://raulisai.github.io/miweb)
 
 ## 👨‍💻 Perfil Profesional
 
