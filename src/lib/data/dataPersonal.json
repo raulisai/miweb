@@ -1,0 +1,73 @@
+{
+    "name": "ISAI MONRROY",
+    "title": "Software Engineer | DevSecOps | cybersecurity",
+    "contact": {
+      "phone": "55 7617 6856",
+      "email": "raulisai97@gmail.com",
+      "location": "CDMX"
+    },
+    "experience": [
+      {
+        "company": "Santander",
+        "role": "DevOps",
+        "period": "Dic 2022 - Now",
+        "location": "CDMX",
+        "description": "DevOps culture with agile methodologies, uses tools such as kibana, jenkins, Git Action, in PaaS, and CaaS infrastructures."
+      },
+      {
+        "company": "Televisa",
+        "role": "Site reliability Engineer",
+        "period": "Nov 2020 - Dic 2022",
+        "location": "CDMX",
+        "description": "Monitoring of Linux, IIS, cloud, as well as their administration. Deployment of applications in aws and onprime."
+      },
+      {
+        "company": "Indra Sistemas",
+        "role": "Web developer",
+        "period": "May 2019 - Nov 2020",
+        "location": "CDMX",
+        "description": "Development of web services with Java technology (Spring) as well as its deployment in production."
+      },
+      {
+        "company": "Gentera",
+        "role": "UIPATH automation",
+        "period": "Nov 2018 - May 2019",
+        "location": "CDMX",
+        "description": "Robots already created were maintained and monitored with an Orchestrator."
+      }
+    ],
+    "education": [
+      {
+        "institution": "INSTITUTO POLITÉCNICO NACIONAL",
+        "period": "2018 - truncated",
+        "details": "ESIA-ING.CIVIL – Unfinished studies (7 semester)"
+      }
+    ],
+    "skills": {
+      "technical": {
+        "proficient_with": [
+          "Python", "Bash", "Linux", "AWS", "SQL", "NoSQL",
+          "Scikit-learn"
+        ],
+        "familiar_with": [
+          "Pyspark", "Kali Linux", "Power BI", "Java", "kibana", "OWASP"
+        ]
+      },
+      "soft": {
+        "proficient_with": [
+          "Initiative autodidact", "Analytics Initiative", "autodidact mathematical skills"
+        ]
+      },
+      "languages": [
+        "Inglés nivel B1",
+        "Español nativo"
+      ]
+    },
+    "about_me": [
+      {
+        "interests": [
+          "Investigate", "Entrepreneurship", "Learn new skills"
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+:root {
+  --eva-purple: #4B3F72;
+  --eva-green: #39FF14;
+  --eva-yellow: #FFD600;
+  --eva-accent: #8BE9FD;
+}
+
+.dark {
+  --eva-purple: #221c3a;
+  --eva-green: #39FF14;
+  --eva-yellow: #FFD600;
+  --eva-accent: #8BE9FD;
+}
+
+body {
+  background-color: white;
+  color: #222;
+}
+.dark body {
+  background-color: #181825;
+  color: #f4f4f4;
+}
