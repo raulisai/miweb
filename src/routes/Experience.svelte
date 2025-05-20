@@ -1,19 +1,30 @@
 <script lang="ts">
   import dataPersonal from '$lib/data/dataPersonal.json';
+  import { onMount } from 'svelte';
+  import { fade, fly } from 'svelte/transition';
+  import { cubicOut } from 'svelte/easing';
+  
+  let mounted = false;
+  
+  onMount(() => {
+    mounted = true;
+  });
 </script>
 
 <section id="experience" class="py-10 px-4 md:px-6 max-w-screen-lg mx-auto">
   <!-- Experience Header -->
-  <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-[#39FF14] font-mono tracking-wider">
+  <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center text-white dark:text-white font-mono tracking-wider"
+         in:fly="{{ y: 20, duration: 800, delay: 200, easing: cubicOut }}">
     EXPERIENCIA LABORAL
-  </h2>
+  </h2> 
   
   <!-- Work Experience Cards -->
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {#each dataPersonal.experience as job (job.company)}
-      <div class="bg-[#181825] border-l-4 border-[#39FF14] p-5 rounded-lg shadow-lg hover:shadow-[#39FF1433] transition-all duration-300">
+      <div class="bg-[#181825] border-l-4 border-[#39FF14] p-5 rounded-lg shadow-lg hover:shadow-[#39FF1433] transition-all duration-300"
+           in:fly="{{ y: 20, duration: 800, delay: 200, easing: cubicOut }}"  >
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1 mb-2">
-          <h3 class="text-xl font-bold text-[#FF2052]">{job.company}</h3>
+          <h3 class="text-xl font-bold">{job.company}</h3>
           <span class="text-[#FFD600] text-sm font-mono">{job.period}</span>
         </div>
         <h4 class="font-semibold text-[#39FF14] mb-2">{job.role}</h4>
@@ -27,97 +38,145 @@
   <div class="h-px bg-gradient-to-r from-[#FF2052] to-[#39FF14] my-10 opacity-70"></div>
   
   <!-- Skills Section -->
-  <div>
-    <h3 class="text-2xl font-bold mb-8 text-center text-[#39FF14] font-mono tracking-wider">
-      SKILLS TÉCNICAS
-    </h3>
-    
-    <!-- Honeycomb container -->
-    <div class="mb-2 text-center text-[#39FF14] font-semibold">PROFICIENT WITH</div>
-    <div class="flex flex-wrap justify-center mb-10 honeycomb-container">
-      {#each dataPersonal.skills.technical.proficient_with as skill, i}
-        <div class="honeycomb-item" style="--delay: {i * 0.1}s">
-          <div class="honeycomb" style="animation-delay: {i * 0.1}s">
-            <div class="honeycomb-content bg-[#181825] border-2 border-[#39FF14] text-[#39FF14]">
-              {skill}
+  <div class="relative min-h-[500px] flex items-center justify-center">
+    <!-- Honeycomb superior izquierda (Proficient) -->
+    <div class="absolute left-0 top-0 z-10 flex flex-col items-start p-2 sm:p-6" style="pointer-events:none;">
+      <div class="honeycomb-grid">
+        {#if mounted}
+          {#each dataPersonal.skills.technical.proficient_with as skill, i}
+            <div class="honeycomb-item nerv-proficient"
+                 style="animation-delay: {0.2 + i * 0.1}s">
+              <span class="text-black">{skill}</span>
             </div>
-          </div>
-        </div>
-      {/each}
+          {/each}
+        {/if}
+      </div>
+      <div class="honeycomb-label text-[#39FF14] mt-2 font-mono font-bold tracking-wider">PROFICIENT</div>
     </div>
-    
-    <div class="mb-2 text-center text-[#FF2052] font-semibold">FAMILIAR WITH</div>
-    <div class="flex flex-wrap justify-center honeycomb-container">
-      {#each dataPersonal.skills.technical.familiar_with as skill, i}
-        <div class="honeycomb-item" style="--delay: {i * 0.1}s">
-          <div class="honeycomb" style="animation-delay: {i * 0.1}s">
-            <div class="honeycomb-content bg-[#181825] border-2 border-[#FF2052] text-[#FF2052]">
-              {skill}
+
+    <!-- Ondas mecha central animadas -->
+    <div class="z-20 flex flex-col items-center justify-center relative">
+      <div class="relative w-44 h-44 flex items-center justify-center">
+        {#each Array(4) as _, i}
+          <span
+            class="absolute rounded-full border-2 border-[#39FF14] opacity-60 animate-wave-mecha"
+            style="
+              width: {6 + i * 4}rem;
+              height: {6 + i * 4}rem;
+              left: 50%; top: 50%;
+              transform: translate(-50%, -50%);
+              animation-delay: {i * 0.5}s;
+              z-index: 0;
+            "
+          ></span>
+        {/each}
+        <span class="absolute w-16 h-16 rounded-full bg-[#181825] border-2 border-[#FFD600] flex items-center justify-center font-mecha text-2xl text-[#39FF14] z-10 shadow-[0_0_16px_#39FF1480]">
+          <svg class="w-8 h-8" fill="none" stroke="#39FF14" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l2.5 2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </div>
+      <div class="text-center mt-4 text-[#39FF14] font-mono text-lg tracking-widest">SKILLS</div>
+    </div>
+
+    <style>
+      @keyframes wave-mecha {
+        0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; }
+        70% { opacity: 0.3; }
+        100% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+      }
+      .animate-wave-mecha {
+        animation: wave-mecha 2.5s cubic-bezier(.7,-0.3,.3,1.5) infinite;
+      }
+    </style>
+
+    <!-- Honeycomb inferior derecha (Familiar) -->
+    <div class="absolute right-0 bottom-0 z-10 flex flex-col items-end p-2 sm:p-6" style="pointer-events:none;">
+      <div class="honeycomb-grid">
+        {#if mounted}
+          {#each dataPersonal.skills.technical.familiar_with as skill, i}
+            <div class="honeycomb-item nerv-familiar"
+                 style="animation-delay: {0.2 + i * 0.1}s">
+              <span class="text-black">{skill}</span>
             </div>
-          </div>
-        </div>
-      {/each}
+          {/each}
+        {/if}
+      </div>
+      <div class="honeycomb-label text-[#FF2052] mt-2 font-mono font-bold tracking-wider">FAMILIAR</div>
     </div>
   </div>
 </section>
 
 
 <style>
-  /* Honeycomb Layout */
-  .honeycomb-container {
-    padding: 1rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 100%;
-    gap: 10px;
+/* Honeycomb grid layout */
+.honeycomb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 78px);
+  grid-auto-rows: 78px;
+  gap: 4px;
+  /* Hex offset effect */
+}
+.honeycomb-grid .honeycomb-item:nth-child(4),
+.honeycomb-grid .honeycomb-item:nth-child(5),
+.honeycomb-grid .honeycomb-item:nth-child(6) {
+  margin-left: 24px;
+}
+
+.honeycomb-item {
+  width: 80px;
+  height: 80px;
+  background: greenyellow;
+  clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border: 3px solid #333;
+  box-shadow: 0 0 16px #000a;
+  margin: 2px;
+  color: #fff;
+  position: relative;
+  animation: nerv-pop 0.8s cubic-bezier(.7,-0.3,.3,1.5) both;
+}
+.nerv-proficient {
+  border-color: #39FF14;
+  color: #39FF14;
+  box-shadow: 0 0 12px #39FF1455, 0 0 2px #000a;
+  background: greenyellow;
+}
+.nerv-familiar {
+  border-color: #ffde20;
+  color: #FF2052;
+  box-shadow: 0 0 12px #FF205266, 0 0 2px #000a;
+  background: rgb(253, 150, 32);
+}
+.honeycomb-label {
+  letter-spacing: 0.15em;
+  font-size: 0.95rem;
+  text-shadow: 0 0 8px #222, 0 0 2px #000;
+}
+
+@keyframes nerv-pop {
+  0% { transform: scale(0.2) rotate(-10deg); opacity: 0; }
+  80% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Responsividad */
+@media (max-width: 640px) {
+  .honeycomb-grid {
+    grid-template-columns: repeat(2, 40px);
+    grid-auto-rows: 36px;
   }
-  
   .honeycomb-item {
-    margin: 0 6px 12px;
-    transform: translateY(var(--delay));
-    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    font-size: 0.7rem;
   }
-  
-  .honeycomb {
-    position: relative;
-    transition: all 0.3s ease;
-  }
-  
-  .honeycomb:hover {
-    transform: translateY(-5px);
-  }
-  
-  .honeycomb-content {
-    width: 100px;
-    height: 86px;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem 0.5rem;
-    font-size: 0.78rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  /* Make it responsive */
-  @media (max-width: 640px) {
-    .honeycomb-content {
-      width: 90px;
-      height: 78px;
-      font-size: 0.7rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .honeycomb-content {
-      width: 80px;
-      height: 69px;
-      font-size: 0.65rem;
-    }
-  }
+}
+
+
 </style>

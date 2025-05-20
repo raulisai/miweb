@@ -47,10 +47,12 @@
       "technical": {
         "proficient_with": [
           "Python", "Bash", "Linux", "AWS", "SQL", "NoSQL",
-          "Scikit-learn"
+          "Scikit-learn","Tensorflow","Kubernetes","Jenkins","Git"
         ],
         "familiar_with": [
-          "Pyspark", "Kali Linux", "Power BI", "Java", "kibana", "OWASP"
+          "Pyspark", "Kali Linux", "Power BI", "Java", "kibana", "OWASP","CMP","Hadoop","Spark",
+          "blender"
+
         ]
       },
       "soft": {
