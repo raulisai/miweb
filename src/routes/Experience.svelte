@@ -40,7 +40,7 @@
   <!-- Skills Section -->
   <div class="relative min-h-[500px] flex items-center justify-center">
     <!-- Honeycomb superior izquierda (Proficient) -->
-    <div class="absolute left-0 top-0 z-10 flex flex-col items-start p-2 sm:p-6" style="pointer-events:none;">
+    <div class="absolute left-0 top-0 z-10 flex flex-col items-start -p-4 sm:p-6" style="pointer-events:none;">
       <div class="honeycomb-grid">
         {#if mounted}
           {#each dataPersonal.skills.technical.proficient_with as skill, i}
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Ondas mecha central animadas -->
-    <div class="z-20 flex flex-col items-center justify-center relative">
+    <div class="z-0 flex flex-col items-center justify-center relative">
       <div class="relative w-44 h-44 flex items-center justify-center">
         {#each Array(4) as _, i}
           <span
@@ -92,7 +92,7 @@
     </style>
 
     <!-- Honeycomb inferior derecha (Familiar) -->
-    <div class="absolute right-0 bottom-0 z-10 flex flex-col items-end p-2 sm:p-6" style="pointer-events:none;">
+    <div class="absolute right-0 bottom-0 z-10 flex flex-col items-end -p-4 sm:p-6" style="pointer-events:none;">
       <div class="honeycomb-grid">
         {#if mounted}
           {#each dataPersonal.skills.technical.familiar_with as skill, i}
@@ -168,13 +168,13 @@
 /* Responsividad */
 @media (max-width: 640px) {
   .honeycomb-grid {
-    grid-template-columns: repeat(2, 40px);
-    grid-auto-rows: 36px;
+    grid-template-columns: repeat(2, 75px);
+    grid-auto-rows: 75px;
   }
   .honeycomb-item {
-    width: 40px;
-    height: 40px;
-    font-size: 0.7rem;
+    width: 75px;
+    height: 75px;
+    font-size: 0.8rem;
   }
 }
 
