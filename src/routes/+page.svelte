@@ -10,7 +10,7 @@
     { href: '#about', label: 'Sobre mí' },
     { href: '#projects', label: 'Proyectos' },
     { href: '#experience', label: 'Experiencia' },
-    { href: '#blog', label: 'Blog' },
+    { href: 'blog', label: 'Blog' },
     { href: '#contact', label: 'Contacto' }
   ];
 </script>
