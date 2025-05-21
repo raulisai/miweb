@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../_app/immutable/assets/0.B0qUYYNP.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.CXSvkkqP.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Ca2HE7_X.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CbfsiUse.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.Cl2Fle6X.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/B-SPW7ve.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/yyPxgAFW.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BqBdTKiL.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.DnmH1tqt.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/v-RwVduR.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CJawBOhh.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.DMuzwecu.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DVzfUqtc.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DUUO_6ik.js"><!--[--><meta name="description" content="Portafolio minimalista y blog de un ingeniero de Machine Learning, inspirado en Evangelion Eva-01."> <meta property="og:title" content="Portafolio ML Engineer - Eva-01"> <meta property="og:description" content="Portafolio minimalista y blog de un ingeniero de Machine Learning, inspirado en Evangelion Eva-01."> <meta property="og:image" content="/eva01-og.png"> <meta name="viewport" content="width=device-width, initial-scale=1"><!--]--><title>Portafolio ML Engineer -ISAI MONRROY </title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header class="relative flex flex-col items-center justify-center py-8 px-4 bg-eva01-dark text-eva01-green border-b-4 border-eva01-green shadow-lg"><h1 class="text-2xl sm:text-4xl md:text-5xl font-mecha tracking-[0.2em] text-center drop-shadow-lg select-none md:leading-tight" style="letter-spacing: 0.15em; text-shadow: 0 2px 12px #39FF1480, 0 1px 0 #111;">エンジニア・ソフトウェア</h1> <p class="text-eva01-accent mt-2 text-base sm:text-lg font-semibold tracking-wide text-center bg-[rgba(34,28,58,0.7)] px-3 py-1 rounded-lg shadow-inner ring-1 ring-eva01-green/60" style="backdrop-filter: blur(2px);">Portafolio &amp; Blog</p> <button class="absolute top-4 right-4 group mt-4 px-3 py-1 rounded-full bg-transparent transition-all hover:opacity-90 shadow-none focus:outline-none flex items-center justify-center" aria-label="Cambiar modo oscuro" style="width: 85px; height: 85px;"><svg viewBox="0 0 56 56" fill="none" class="w-16 h-16 sm:w-16 sm:h-16" xmlns="http://www.w3.org/2000/svg" style="display: block;"><polygon points="17,24 22,19 24,28 21,37 17,32" fill="#191724" stroke="#39FF14" stroke-width="2" filter=""></polygon><polygon points="39,24 34,19 32,28 35,37 39,32" fill="#191724" stroke="#39FF14" stroke-width="2" filter=""></polygon><!--[!--><!--]--><polygon points="24,40 28,46 32,40" fill="#39FF14" opacity="0.7"><animate attributeName="opacity" values="0.5;1;0.6;1;0.5" dur="1.2s" repeatCount="indefinite"></animate></polygon></svg> <span class="absolute bottom-0 left-1/2 -translate-x-1/2 text-xs font-mecha tracking-wider mt-2 text-eva01-accent bg-eva01-dark/70 px-2 py-0.5 rounded shadow pointer-events-none select-none" style="letter-spacing:0.11em;">DARK</span></button> <div class="absolute left-4 top-4 hidden sm:flex items-center gap-2"><div class="w-4 h-4 bg-eva01-green rounded-sm animate-pulse shadow-eva01-green"></div> <span class="text-xs text-eva01-green font-mecha uppercase tracking-widest opacity-80">ACTIVE</span></div></header> <main class="max-w-3xl mx-auto px-4"><!----><!----><article><h1>Introducción práctica a SvelteKit desde la raiz</h1> <p><em>Sun May 18 2025 18:00:00 GMT-0600 (Central Standard Time)</em></p> <!--1c96fjn--><p>SvelteKit es un framework que extiende Svelte para facilitar el desarrollo de aplicaciones web completas, soportando enrutamiento, carga de datos y renderizado del lado del servidor.</p>
+<h2>1. Estructura básica del proyecto</h2>
+<p>Cuando creas un nuevo proyecto, verás una estructura como esta:</p>
+<p>my-app/
+├── src/
+│ ├── routes/
+│ │ └── +page.svelte
+│ └── lib/
+├── static/
+├── svelte.config.js
+└── vite.config.js</p>
+<p>markdown
+Copiar
+Editar</p>
+<ul>
+<li><code>routes/</code>: Aquí defines las páginas. Cada archivo <code>.svelte</code> se convierte en una ruta.</li>
+<li><code>+page.svelte</code>: Representa una vista pública.</li>
+<li><code>+page.ts</code> o <code>+page.js</code>: Lógica de carga de datos (<code>load</code>).</li>
+<li><code>lib/</code>: Componentes reutilizables.</li>
+<li><code>static/</code>: Archivos públicos como imágenes o favicon.</li>
+</ul>
+<h2>2. Crear una página</h2>
+<p>Crea un archivo <code>src/routes/about/+page.svelte</code>:</p>
+<pre><code class="language-svelte">&lt;script&gt;
+  export let data;
+&lt;/script&gt;
+
+&lt;h1&gt;Acerca de nosotros&lt;/h1&gt;
+&lt;p&gt;Bienvenido a la página de información.&lt;/p&gt;
+Se accede en /about.
+
+3. Navegación entre páginas
+Usa el componente &lt;a&gt; normal o &lt;Link&gt; de SvelteKit:
+
+svelte
+Copiar
+Editar
+&lt;a href=&quot;/about&quot;&gt;Ir a About&lt;/a&gt;
+4. Carga de datos con load
+Crea +page.ts:
+
+ts
+Copiar
+Editar
+export function load() {
+  return {
+    name: &#39;SvelteKit&#39;
+  };
+}
+Y úsalo en +page.svelte:
+
+svelte
+Copiar
+Editar
+&lt;script&gt;
+  export let data;
+&lt;/script&gt;
+
+&lt;h1&gt;Hola {data.name}&lt;/h1&gt;
+5. Ejecutar el proyecto
+bash
+Copiar
+Editar
+npm install
+npm run dev
+Este es el punto de partida esencial para trabajar con la sintaxis de SvelteKit desde cero.
+
+css
+Copiar
+Editar
+
+¿Quieres que te lo exporte como archivo `.md` listo para copiar o subir a tu blog?
+</code></pre>
+<!----></article><!----><!----></main><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_l11yt7 = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.CXSvkkqP.js"),
+						import("../_app/immutable/entry/app.Cl2Fle6X.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data: [null,{type:"data",data:{post:{title:"Introducción práctica a SvelteKit desde la raiz",date:new Date(1747612800000),content:"\r\nSvelteKit es un framework que extiende Svelte para facilitar el desarrollo de aplicaciones web completas, soportando enrutamiento, carga de datos y renderizado del lado del servidor.\r\n\r\n## 1. Estructura básica del proyecto\r\n\r\nCuando creas un nuevo proyecto, verás una estructura como esta:\r\n\r\nmy-app/\r\n├── src/\r\n│ ├── routes/\r\n│ │ └── +page.svelte\r\n│ └── lib/\r\n├── static/\r\n├── svelte.config.js\r\n└── vite.config.js\r\n\r\nmarkdown\r\nCopiar\r\nEditar\r\n\r\n- `routes/`: Aquí defines las páginas. Cada archivo `.svelte` se convierte en una ruta.\r\n- `+page.svelte`: Representa una vista pública.\r\n- `+page.ts` o `+page.js`: Lógica de carga de datos (`load`).\r\n- `lib/`: Componentes reutilizables.\r\n- `static/`: Archivos públicos como imágenes o favicon.\r\n\r\n## 2. Crear una página\r\n\r\nCrea un archivo `src/routes/about/+page.svelte`:\r\n\r\n```svelte\r\n\u003Cscript>\r\n  export let data;\r\n\u003C/script>\r\n\r\n\u003Ch1>Acerca de nosotros\u003C/h1>\r\n\u003Cp>Bienvenido a la página de información.\u003C/p>\r\nSe accede en /about.\r\n\r\n3. Navegación entre páginas\r\nUsa el componente \u003Ca> normal o \u003CLink> de SvelteKit:\r\n\r\nsvelte\r\nCopiar\r\nEditar\r\n\u003Ca href=\"/about\">Ir a About\u003C/a>\r\n4. Carga de datos con load\r\nCrea +page.ts:\r\n\r\nts\r\nCopiar\r\nEditar\r\nexport function load() {\r\n  return {\r\n    name: 'SvelteKit'\r\n  };\r\n}\r\nY úsalo en +page.svelte:\r\n\r\nsvelte\r\nCopiar\r\nEditar\r\n\u003Cscript>\r\n  export let data;\r\n\u003C/script>\r\n\r\n\u003Ch1>Hola {data.name}\u003C/h1>\r\n5. Ejecutar el proyecto\r\nbash\r\nCopiar\r\nEditar\r\nnpm install\r\nnpm run dev\r\nEste es el punto de partida esencial para trabajar con la sintaxis de SvelteKit desde cero.\r\n\r\ncss\r\nCopiar\r\nEditar\r\n\r\n¿Quieres que te lo exporte como archivo `.md` listo para copiar o subir a tu blog?"}},uses:{params:["slug"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
