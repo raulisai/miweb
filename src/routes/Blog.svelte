@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { base } from '$app/paths';
   let posts = [
     {
       title: 'Introducción a SvelteKit',
       date: '2024-06-01',
-      href: '/blog/introduccion-sveltekit',
+      href: `${base}/blog/introduccion-sveltekit`,
       content: `
         <p>SvelteKit es un framework moderno para construir aplicaciones web ultra rápidas. En esta nota veremos cómo comenzar y por qué deberías probarlo.</p>
         <ul>
@@ -16,7 +17,7 @@
     {
       title: 'Productividad con VSCode',
       date: '2024-05-20',
-      href: '/blog/productividad-vscode',
+      href: `${base}/blog/productividad-vscode`,
       content: `
         <p>Descubre algunos plugins y atajos que harán tu experiencia en VSCode mucho más rápida y agradable.</p>
         <ol>
@@ -29,7 +30,7 @@
     {
       title: 'Cómo usar Git como un Pro',
       date: '2024-05-10',
-      href: '/blog/git-como-pro',
+      href: `${base}/blog/git-como-pro`,
       content: `
         <p>Aprende comandos avanzados de Git y flujos de trabajo para proyectos colaborativos.</p>
         <ul>
@@ -42,7 +43,7 @@
   ];
 
   function irAlBlog() {
-    window.location.href = '/blog';
+    window.location.href = `${base}/blog`;
   }
 </script>
 
