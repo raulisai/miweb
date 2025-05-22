@@ -1,7 +1,7 @@
 <script lang="ts">
   import dataPersonal from '$lib/data/dataPersonal.json';
   import { onMount } from 'svelte';
-  import { fade, fly } from 'svelte/transition';
+  import { fly } from 'svelte/transition';
   import { cubicOut } from 'svelte/easing';
   
   let mounted = false;

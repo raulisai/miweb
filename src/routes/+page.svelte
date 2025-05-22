@@ -5,12 +5,12 @@
   import Blog from './Blog.svelte';
   import Contact from './Contact.svelte';
   import dataPersonal from '$lib/data/dataPersonal.json';
-  import { fly } from 'svelte/transition';
+  import { base } from '$app/paths';
   const navLinks = [
     { href: '#about', label: 'Sobre mí' },
     { href: '#projects', label: 'Proyectos' },
     { href: '#experience', label: 'Experiencia' },
-    { href: 'blog', label: 'Blog' },
+    { href: `${base}/blog`, label: 'Blog' },
     { href: '#contact', label: 'Contacto' }
   ];
 </script>
@@ -18,14 +18,14 @@
 <section class="flex flex-col items-center justify-center min-h-[55vh] gap-3 py-8">
 <div class="absolute top-0 right-0  z-0 pointer-events-none overflow-hidden">
   <img 
-    src="/eva01.png" 
+    src={`${base}/eva01.png`} 
     alt="Eva-01" 
     class="object-cover object-right h-full w-full opacity-30"
     style="mix-blend-mode: luminosity;"
   />
 </div>
 
-<img src="/yo.jpg" alt="foto del dev" class="w-28 h-28 rounded-full border-4 z-10 shadow-md" style="border-color: var(--eva-green);" />
+<img src={`${base}/yo.jpg`} alt="foto del dev" class="w-28 h-28 rounded-full border-4 z-10 shadow-md" style="border-color: var(--eva-green);" />
 <h2 class="text-3xl font-mecha" style="color: var(--eva-green);">{dataPersonal.name}</h2>
 <h3 class="text-lg font-mecha" style="color: var(--eva-accent);">{dataPersonal.title}</h3>
 <p class="max-w-md text-center font-medium" style="color: var(--text-primary);">

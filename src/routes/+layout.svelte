@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '../app.css';
+	import { base } from '$app/paths';
 	import { onMount } from 'svelte';
 	let dark = false;
 
@@ -28,7 +29,7 @@
 	<meta name="description" content="Portafolio minimalista y blog de un ingeniero de Machine Learning, inspirado en Evangelion Eva-01." />
 	<meta property="og:title" content="Portafolio ML Engineer - Eva-01" />
 	<meta property="og:description" content="Portafolio minimalista y blog de un ingeniero de Machine Learning, inspirado en Evangelion Eva-01." />
-	<meta property="og:image" content="/eva01-og.png" />
+	<meta property="og:image" content={`${base}/eva01-og.png`} />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </svelte:head>
 
