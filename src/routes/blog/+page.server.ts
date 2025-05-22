@@ -11,7 +11,7 @@ export interface Post extends PostMeta {
 }
 
 async function getPosts(): Promise<PostMeta[]> {
-  const files = import.meta.glob('./posts/*.md', { query: '?raw', import: 'default', eager: true });
+  const files = import.meta.glob('$lib/posts/*.md', { query: '?raw', import: 'default', eager: true });
   console.log('files', files);
   return Object.entries(files).map(([path, raw]) => {
     const { data } = matter(raw as string);
@@ -21,14 +21,11 @@ async function getPosts(): Promise<PostMeta[]> {
   });
 }
 
-async function getPost(slug: string): Promise<Post> {
-  const file = await import(`../posts/${slug}.md?raw`);
-  const { data, content } = matter(file.default);
-  return { ...data, content } as Post;
-}
 
 export const load = async () => {
   return {
     posts: await getPosts()
   };
 };
+
+export const prerender = true;

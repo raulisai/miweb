@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PostMeta } from '$lib/posts';
+  import type { PostMeta } from '$lib/types';
   export let data: { posts: PostMeta[] };
   let posts = data.posts;
   console.log('posts', posts);

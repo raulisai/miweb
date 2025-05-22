@@ -13,7 +13,7 @@ export interface Post extends PostMeta {
 
 
 async function getPost(slug: string): Promise<Post> {
-  const file = await import(`../posts/${slug}.md?raw`);
+  const file = await import(`$lib/posts/${slug}.md?raw`);
   const { data, content } = matter(file.default);
   return { ...data, content } as Post;
 }
@@ -29,3 +29,5 @@ export const load = async ({ params }) => {
     throw error(404, 'Post not found');
   }
 };
+
+export const prerender = true;
