@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../_app/immutable/assets/0.B0qUYYNP.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.DOX8jIc4.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Di4k_5Lm.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/CruWdcf-.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Ge17H7du.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BF7KFsgI.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.BMkEN5e6.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BuPSzXch.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DJ8dX_cA.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DW14SflB.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.CHDmwU93.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Bd8HfDpW.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/DBHy7eHk.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/4.DpH7vfkO.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/BGdB_RfX.js"><!--[--><meta name="description" content="Portafolio minimalista y blog de un ingeniero de Machine Learning, inspirado en Evangelion Eva-01."> <meta property="og:title" content="Portafolio ML Engineer - Eva-01"> <meta property="og:description" content="Portafolio minimalista y blog de un ingeniero de Machine Learning, inspirado en Evangelion Eva-01."> <meta property="og:image" content="../eva01-og.png"> <meta name="viewport" content="width=device-width, initial-scale=1"><!--]--><title>Portafolio ML Engineer -ISAI MONRROY </title>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents"><!--[--><!--[--><!----><header class="relative flex flex-col items-center justify-center py-8 px-4 bg-eva01-dark text-eva01-green border-b-4 border-eva01-green shadow-lg"><h1 class="text-2xl sm:text-4xl md:text-5xl font-mecha tracking-[0.2em] text-center drop-shadow-lg select-none md:leading-tight" style="letter-spacing: 0.15em; text-shadow: 0 2px 12px #39FF1480, 0 1px 0 #111;">エンジニア・ソフトウェア</h1> <p class="text-eva01-accent mt-2 text-base sm:text-lg font-semibold tracking-wide text-center bg-[rgba(34,28,58,0.7)] px-3 py-1 rounded-lg shadow-inner ring-1 ring-eva01-green/60" style="backdrop-filter: blur(2px);">Portafolio &amp; Blog</p> <button class="absolute top-4 right-4 group mt-4 px-3 py-1 rounded-full bg-transparent transition-all hover:opacity-90 shadow-none focus:outline-none flex items-center justify-center" aria-label="Cambiar modo oscuro" style="width: 85px; height: 85px;"><svg viewBox="0 0 56 56" fill="none" class="w-16 h-16 sm:w-16 sm:h-16" xmlns="http://www.w3.org/2000/svg" style="display: block;"><polygon points="17,24 22,19 24,28 21,37 17,32" fill="#191724" stroke="#39FF14" stroke-width="2" filter=""></polygon><polygon points="39,24 34,19 32,28 35,37 39,32" fill="#191724" stroke="#39FF14" stroke-width="2" filter=""></polygon><!--[!--><!--]--><polygon points="24,40 28,46 32,40" fill="#39FF14" opacity="0.7"><animate attributeName="opacity" values="0.5;1;0.6;1;0.5" dur="1.2s" repeatCount="indefinite"></animate></polygon></svg> <span class="absolute bottom-0 left-1/2 -translate-x-1/2 text-xs font-mecha tracking-wider mt-2 text-eva01-accent bg-eva01-dark/70 px-2 py-0.5 rounded shadow pointer-events-none select-none" style="letter-spacing:0.11em;">DARK</span></button> <div class="absolute left-4 top-4 hidden sm:flex items-center gap-2"><div class="w-4 h-4 bg-eva01-green rounded-sm animate-pulse shadow-eva01-green"></div> <span class="text-xs text-eva01-green font-mecha uppercase tracking-widest opacity-80">ACTIVE</span></div></header> <main class="max-w-3xl mx-auto px-4"><!----><!----><article><h1>Git como un Pro Comandos y Buenas Prácticas</h1> <p><em>Sun May 18 2025 18:00:00 GMT-0600 (Central Standard Time)</em></p> <!----><p>Git es una herramienta poderosa para el control de versiones. Usarlo de forma eficiente te puede ahorrar muchos problemas y mejorar la colaboración con tu equipo.</p>
+<h2>1. Configuración inicial</h2>
+<pre><code class="language-bash">git config --global user.name &quot;Tu Nombre&quot;
+git config --global user.email &quot;tu@email.com&quot;
+git config --global init.defaultBranch main
+
+git init              # Crear un repositorio
+git status            # Ver archivos modificados
+git add .             # Añadir todos los cambios
+git commit -m &quot;Mensaje&quot; # Confirmar cambios
+git push origin main  # Subir al repositorio remoto
+
+git branch nueva-rama       # Crear nueva rama
+git checkout nueva-rama     # Cambiar de rama
+git merge nombre-rama       # Fusionar rama en actual
+git branch -d nombre-rama   # Eliminar rama
+
+
+git reset --soft HEAD~1     # Deshacer último commit (mantiene cambios)
+git checkout -- archivo     # Revertir cambios en archivo específico
+git stash                   # Guardar cambios sin confirmar
+git stash pop               # Recuperar stash
+git log --oneline --graph --all    # Ver historial resumido con ramas
+git reflog                         # Ver historial incluso de commits perdidos
+git cherry-pick &lt;hash&gt;             # Aplicar commit específico
+
+
+
+
+git log --oneline --graph --all    # Ver historial resumido con ramas
+git reflog                         # Ver historial incluso de commits perdidos
+git cherry-pick &lt;hash&gt;             # Aplicar commit específico
+</code></pre>
+<!----></article><!----><!----></main><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_m4nely = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						assets: "/miweb"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					Promise.all([
+						import("../_app/immutable/entry/start.DOX8jIc4.js"),
+						import("../_app/immutable/entry/app.BMkEN5e6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 4],
+							data: [null,{type:"data",data:{post:{title:"Git como un Pro Comandos y Buenas Prácticas",date:new Date(1747612800000),content:"\r\nGit es una herramienta poderosa para el control de versiones. Usarlo de forma eficiente te puede ahorrar muchos problemas y mejorar la colaboración con tu equipo.\r\n\r\n## 1. Configuración inicial\r\n\r\n```bash\r\ngit config --global user.name \"Tu Nombre\"\r\ngit config --global user.email \"tu@email.com\"\r\ngit config --global init.defaultBranch main\r\n\r\ngit init              # Crear un repositorio\r\ngit status            # Ver archivos modificados\r\ngit add .             # Añadir todos los cambios\r\ngit commit -m \"Mensaje\" # Confirmar cambios\r\ngit push origin main  # Subir al repositorio remoto\r\n\r\ngit branch nueva-rama       # Crear nueva rama\r\ngit checkout nueva-rama     # Cambiar de rama\r\ngit merge nombre-rama       # Fusionar rama en actual\r\ngit branch -d nombre-rama   # Eliminar rama\r\n\r\n\r\ngit reset --soft HEAD~1     # Deshacer último commit (mantiene cambios)\r\ngit checkout -- archivo     # Revertir cambios en archivo específico\r\ngit stash                   # Guardar cambios sin confirmar\r\ngit stash pop               # Recuperar stash\r\ngit log --oneline --graph --all    # Ver historial resumido con ramas\r\ngit reflog                         # Ver historial incluso de commits perdidos\r\ngit cherry-pick \u003Chash>             # Aplicar commit específico\r\n\r\n\r\n\r\n\r\ngit log --oneline --graph --all    # Ver historial resumido con ramas\r\ngit reflog                         # Ver historial incluso de commits perdidos\r\ngit cherry-pick \u003Chash>             # Aplicar commit específico\r\n"}},uses:{params:["slug"]}}],
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
