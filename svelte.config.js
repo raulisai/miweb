@@ -24,7 +24,9 @@ const config = {
     })
   ],
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      fallback: 'index.html'
+    }),
     // Enable TypeScript in Svelte files
     typescript: {
       // Enable type checking in Svelte files

@@ -1,5 +1,5 @@
 ---
-title: Git como un Pro: Comandos y Buenas Prácticas
+title: Git como un Pro Comandos y Buenas Prácticas
 date: 2025-05-19
 ---
 
