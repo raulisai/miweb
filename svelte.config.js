@@ -27,6 +27,11 @@ const config = {
     adapter: adapter({
       fallback: 'index.html'
     }),
+    paths: {
+
+      base: '/miweb'
+    },
+
     // Enable TypeScript in Svelte files
     typescript: {
       // Enable type checking in Svelte files
