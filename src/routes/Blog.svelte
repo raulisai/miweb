@@ -68,12 +68,12 @@
     {/each}
   </div>
   <div class="flex justify-center mt-14">
-    <button
-      class="btn-eva px-7 py-3 rounded-lg border border-[var(--eva-green)] font-mecha text-base font-semibold bg-transparent text-[var(--eva-green)] hover:bg-[var(--eva-green)] hover:text-[#181825] transition-all duration-300 shadow-none focus:ring-2 focus:ring-[var(--eva-accent)] ring-inset"
-      on:click={irAlBlog}
+    <a
+      href={'/blog'}
+      class="btn-eva px-7 py-3 rounded-lg border border-[var(--eva-green)] font-mecha text-base font-semibold bg-transparent text-[var(--eva-green)] hover:bg-[var(--eva-green)] hover:text-[#181825] transition-all duration-300 shadow-none focus:ring-2 focus:ring-[var(--eva-accent)] ring-inset inline-block text-center"
     >
       Ver más notas
-    </button>
+    </a>
   </div>
 </section>
 
