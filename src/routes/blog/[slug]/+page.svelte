@@ -1,5 +1,5 @@
 <script lang="ts">
- import type { Post } from '$lib/posts';
+ import type { Post } from '$lib/types';
  import { marked } from 'marked';
   export let data: { post: Post };
   let post = data.post;
