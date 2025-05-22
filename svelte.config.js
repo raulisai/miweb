@@ -1,5 +1,7 @@
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+import dotenv from 'dotenv';
+dotenv.config();
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -30,8 +32,7 @@ const config = {
       fallback: 'index.html'
     }),
     paths: {
-
-      base: '/miweb'  
+      base: process.env.ENVIRONMENT === 'development' ? '' : '/miweb'
     },
 
     // Enable TypeScript in Svelte files
