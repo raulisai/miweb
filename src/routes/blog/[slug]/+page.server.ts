@@ -1,5 +1,6 @@
 import matter from 'gray-matter';
 import type { Post } from '$lib/types';
+import { error } from '@sveltejs/kit';
 
 
 async function getPost(slug: string): Promise<Post> {
@@ -8,7 +9,7 @@ async function getPost(slug: string): Promise<Post> {
   return { ...data, content } as Post;
 }
 
-import { error } from '@sveltejs/kit';
+
 
 export const load = async ({ params }) => {
   try {

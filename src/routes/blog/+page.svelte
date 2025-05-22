@@ -3,7 +3,6 @@
   import { base } from '$app/paths';
   export let data: { posts: PostMeta[] };
   let posts = data.posts;
-  console.log('posts', posts);
 </script>
 
 <h1 class="eva-title-mecha-metal">
@@ -106,7 +105,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
   text-shadow: 0 2px 8px #39FF14cc, 0 1px 0 #fff, 0 0 10px #7C3AED, 1px 1px 0 #000a;
   filter: brightness(1.08) contrast(1.08);
   position: relative;

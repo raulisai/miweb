@@ -3,7 +3,6 @@
  import { marked } from 'marked';
   export let data: { post: Post };
   let post = data.post;
-  console.log('posts', post);
 </script>
 
 
