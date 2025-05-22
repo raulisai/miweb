@@ -1,15 +1,5 @@
 import matter from 'gray-matter';
-
-export interface PostMeta {
-  title: string;
-  date: string;
-  slug: string;
-}
-
-export interface Post extends PostMeta {
-  content: string;
-}
-
+import type { Post } from '$lib/types';
 
 
 async function getPost(slug: string): Promise<Post> {

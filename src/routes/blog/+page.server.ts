@@ -1,14 +1,5 @@
 import matter from 'gray-matter';
-
-export interface PostMeta {
-  title: string;
-  date: string;
-  slug: string;
-}
-
-export interface Post extends PostMeta {
-  content: string;
-}
+import type { PostMeta } from '$lib/types';
 
 async function getPosts(): Promise<PostMeta[]> {
   const files = import.meta.glob('$lib/posts/*.md', { query: '?raw', import: 'default', eager: true });

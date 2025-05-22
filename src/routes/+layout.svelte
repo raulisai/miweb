@@ -39,11 +39,12 @@
 		style="letter-spacing: 0.15em; text-shadow: 0 2px 12px #39FF1480, 0 1px 0 #111;">
 		エンジニア・ソフトウェア
 	</h1>
-	<p class="text-eva01-accent mt-2 text-base sm:text-lg font-semibold tracking-wide text-center 
-		bg-[rgba(34,28,58,0.7)] px-3 py-1 rounded-lg shadow-inner ring-1 ring-eva01-green/60"
-		style="backdrop-filter: blur(2px);">
+	<a href={base + '/'} 
+		class="text-eva01-accent mt-2 text-base sm:text-lg font-semibold tracking-wide text-center 
+		bg-[rgba(34,28,58,0.7)] px-3 py-1 rounded-lg shadow-inner ring-1 ring-eva01-green/60 hover:ring-eva01-green/80 transition-all"
+		style="backdrop-filter: blur(2px); text-decoration: none;">
 		Portafolio & Blog
-	</p>
+	</a>
 	<button 
 	class="absolute top-4 right-4 group mt-4 px-3 py-1 rounded-full bg-transparent transition-all hover:opacity-90 shadow-none focus:outline-none flex items-center justify-center"
 	on:click={toggleDark} 
