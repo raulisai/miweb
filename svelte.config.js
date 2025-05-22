@@ -25,11 +25,13 @@ const config = {
   ],
   kit: {
     adapter: adapter({
+      pages: 'docs',
+      assets: 'docs',
       fallback: 'index.html'
     }),
     paths: {
 
-      base: '/miweb'
+      base: '/miweb'  
     },
 
     // Enable TypeScript in Svelte files
